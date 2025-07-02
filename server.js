@@ -18,6 +18,9 @@ const getCurrentFilePath = () => {
   return path.join(saveDir, fileName);
 };
 
+app.get("/health", (req, res) => {
+  res.send("Api is running");
+});
 app.all("/omi-webhook", (req, res) => {
   const data = {
     headers: req.headers,
